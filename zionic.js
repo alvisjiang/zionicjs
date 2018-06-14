@@ -1,6 +1,5 @@
-
-function zion(viewName, block) {
-    var nic = {};
+var nic = {};
+function zion(viewName) {
     let nativeFuncs = json.parse(prompt("zionic://getFuncs", viewName));
     for (let i = 0; i < nativeFuncs.length; i++) {
         let funcName = nativeFuncs[i];
@@ -8,7 +7,4 @@ function zion(viewName, block) {
             return prompt("call://" + funcName, params)
         }
     }
-    block(nic)
 }
-
-module.exports = zion;
